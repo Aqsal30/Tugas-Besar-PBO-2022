@@ -6,6 +6,7 @@ from tkinter import messagebox
 window = Tk()
 window.title('Test Your Brain')
 window.resizable(0,0)
+
 class menu_utama:
     canvas = Canvas(window, width=1000,height=600,bg="#F4DEB9")
     def tampil_menu(self) :
@@ -25,7 +26,10 @@ class menu_utama:
         self.canva.pack()
         self.back = Button(self.canva, bg="black",font='Helvetica 18 bold',borderwidth=0,width=10,text="Back",fg="#F4DEB9",command=self.balik1).place(x=2,y=2)
         self.judul = Label(self.canva, text="Tentang",font='Helvetica 35 bold',bg="#F4DEB9").place(x=500,y=100,anchor="center")
-        self.isi = Label(self.canva, text="Permainan ini sangat sederhana yaitu hanya menyamakan pola dari susunan kotak yang ditunjukkan sebelum permainan dimulai. untuk menentukan apakah pola sudah sesuai dengan yang telah ditunjukkan player dapat menunggu hingga waktu yang telah ditentukan habis. jika player salah memilih kotak maka permainan akan berakhir",font='Helvetica 18 bold',bg="#F4DEB9").place(x=2,y=200)
+        self.isi1 = Label(self.canva, text="Permainan ini sangat sederhana yaitu hanya menyamakan pola dari susunan kotak",font='Helvetica 18 bold',bg="#F4DEB9").place(x=2,y=200)
+        self.isi2 = Label(self.canva, text="yang ditunjukkan sebelum permainan dimulai. untuk menentukan apakah pola sudah",font='Helvetica 18 bold',bg="#F4DEB9").place(x=2,y=230)
+        self.isi3 = Label(self.canva, text="sesuai dengan yang telah ditunjukkan player dapat menunggu hingga waktu yang",font='Helvetica 18 bold',bg="#F4DEB9").place(x=2,y=260)
+        self.isi4 = Label(self.canva, text="telah ditentukan habis. jika player salah memilih kotak maka permainan akan berakhir",font='Helvetica 18 bold',bg="#F4DEB9").place(x=2,y=290)
     def balik1(self):
         self.canva.pack_forget()
         self.tampil_menu()
@@ -45,6 +49,7 @@ class Level (menu_utama):
     def balik2(self):
         self.level.pack_forget()
         self.tampil_menu()
+
 class Game (Level):
     game = Canvas(window, width=1000,height=600,bg="#F4DEB9")
     def balik3(self):
@@ -57,7 +62,7 @@ class Game (Level):
         self.a = "easy"
         self.game.create_rectangle(2,100,1000,500,fill="gray",outline="gray")
         self.warna = ["black","red"]
-        self.judul = Label(self.game, text="Mudah",font='Helvetica 25 italic',bg="#F4DEB9").place(x=850,y=5)
+        self.judul = Label(self.game, text="Mudah",font='Helvetica 25 italic',bg="#F4DEB9").place(x=870,y=5)
         self.back = Button(self.game, bg="black",font='Helvetica 18 bold',borderwidth=0,width=10,text="Back",fg="#F4DEB9",command=self.balik3,state="disable").place(x=2,y=2)
         self.l1 = Label(self.game, width=11,height=5, bg= choice(self.warna))
         self.l1.place(x=400,y=200,anchor="center")
